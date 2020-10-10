@@ -2,9 +2,9 @@
 	"name": "yndx-teach",
 	"version": "1.0.0",
 	"description": "",
-	"main": "script.js",
 	"scripts": {
 		"dev": "node server.js",
+		"build": "echo 1",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
