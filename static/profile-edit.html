@@ -1,0 +1,79 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/styles/normalize.css" />
+		<link rel="stylesheet" href="/styles/main.css" />
+		<title>Profile edit</title>
+	</head>
+	<body>
+		<main class="main-window">
+			<aside class="main-window__aside main-window__aside_back">
+				<button class="btn">
+					<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13 6.8H2V5.2h11z"/><path d="M6 11L2 6l4-5" stroke="currentColor" stroke-width="1.6"/></svg>
+				</button>
+			</aside>
+			<section class="main-window__main">
+				<section class="main-area">
+					<div class="main-area__scroll">
+						<div class="container">
+							<form action="#" name="asyncForm">
+								<span class="user-detail">
+									<span class="user-detail__avatar">
+										<label for="avatar" class="user-avatar-label"></label>
+										<input type="file" id="avatar" class="user-avatar-input">
+									</span>
+									<span class="user-detail__display-name">
+										<h1>Кирилл</h1>
+									</span>
+								</span>
+
+								<ul class="props-list">
+									<li class="props-list__li">
+										<label for="first_name" class="props-list__edit-label">Имя</label>
+										<input id="first_name" name="first_name" type="text" class="props-list__edit" value="Кирилл" placeholder="Введите">
+									</li>
+									<li class="props-list__li">
+										<label for="second_name" class="props-list__edit-label">Фамилия</label>
+										<input id="second_name" name="second_name" type="text" class="props-list__edit" value="Гладких" placeholder="Введите">
+									</li>
+									<li class="props-list__li">
+										<label for="display_name" class="props-list__edit-label">Отображаемое имя</label>
+										<input id="display_name" name="display_name" type="text" class="props-list__edit" value="Кирилл" placeholder="Введите">
+									</li>
+									<li class="props-list__li">
+										<label for="login" class="props-list__edit-label">Логин</label>
+										<input id="login" name="login" type="text" class="props-list__edit" value="gldk.ru" placeholder="Введите">
+									</li>
+									<li class="props-list__li">
+										<label for="email" class="props-list__edit-label">Почта</label>
+										<input id="email" name="email" type="email" class="props-list__edit" value="a@gldk.ru" placeholder="Введите">
+									</li>
+									<li class="props-list__li">
+										<label for="phone" class="props-list__edit-label">Телефон</label>
+										<input id="phone" name="phone" type="tel" class="props-list__edit" value="79082554180" placeholder="Введите">
+									</li>
+								</ul>
+
+								<ul class="props-list">
+									<li class="props-list__li">
+										<label for="newPassword" class="props-list__edit-label">Новый пароль</label>
+										<input id="newPassword" name="newPassword" type="password" class="props-list__edit" value="" placeholder="Изменить пароль">
+									</li>
+									<li class="props-list__li">
+										<label for="oldPassword" class="props-list__edit-label">Старый пароль</label>
+										<input id="oldPassword" name="oldPassword" type="password" class="props-list__edit" value="" placeholder="Изменить пароль">
+									</li>
+								</ul>
+
+								<input type="submit" id="submit-form" class="btn btn_block btn_lg btn_padding" value="Сохранить">
+							</form>
+						</div>
+					</div>
+				</section>
+			</section>
+		</main>
+		<script src="/js/main.js"></script>
+	</body>
+</html>

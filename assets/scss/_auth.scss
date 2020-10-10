@@ -1,0 +1,16 @@
+.auth-form {
+  width: 100%;
+  display: block;
+  margin: auto;
+  max-width: 26rem;
+  background: #fff;
+  box-shadow: $box-shadow;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  text-align: center;
+
+  &__header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
