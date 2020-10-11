@@ -56,6 +56,10 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+form {
+  margin: 0;
+}
+
 textarea {
   height: auto;
   min-height: $input-height;
@@ -86,7 +90,7 @@ a {
   background-color: $primary;
   height: $input-height;
   border-radius: $input-height / 2;
-  color: #fff;
+  color: $text-light;
   text-align: center;
   min-width: $input-height;
   cursor: pointer;
@@ -138,22 +142,22 @@ a {
   }
 
   &_danger {
-    background-color: $red;
-    color: #fff;
+    background-color: $danger;
+    color: $text-light;
 
     &:hover {
-      color: #fff;
-      background-color: lighten($red, 7%);
+      color: $text-light;
+      background-color: lighten($danger, 7%);
     }
   }
 
   &_secondary {
-    background-color: #E2E2E2;
+    background-color: $gray;
     color: $black;
 
     &:hover {
       color: $black;
-      background-color: lighten(#E2E2E2, 2%);
+      background-color: lighten($gray, 2%);
     }
   }
 }
@@ -163,7 +167,7 @@ a {
 }
 
 .text-danger {
-  color: $red;
+  color: $danger;
 }
 
 .text-sm {

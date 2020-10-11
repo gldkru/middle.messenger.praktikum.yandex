@@ -13,7 +13,7 @@
   &__window {
     width: 96%;
     max-width: 400px;
-    background-color: #fff;
+    background-color: $bg-main;
     padding: $indent-vertical * 3 $indent-horizontal * 4;
     border-radius: $border-radius * 2;
     font-size: 1.5rem;

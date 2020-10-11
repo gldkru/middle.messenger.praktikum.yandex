@@ -8,14 +8,14 @@
 		<title>Profile</title>
 	</head>
 	<body>
-		<main class="main-window">
+		<div class="main-window main-window_fixed">
 			<aside class="main-window__aside main-window__aside_back">
 				<button class="btn">
 					<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13 6.8H2V5.2h11z"/><path d="M6 11L2 6l4-5" stroke="currentColor" stroke-width="1.6"/></svg>
 				</button>
 			</aside>
-			<section class="main-window__main">
-				<section class="main-area">
+			<main class="main-window__main">
+				<div class="main-area">
 					<div class="main-area__scroll">
 						<div class="container">
 							<div class="user-detail">
@@ -38,17 +38,17 @@
 
 							<ul class="props-list">
 								<li class="props-list__li">
-									<a href="#">Изменить данные</a>
+									<a href="/profile-edit.html">Изменить данные</a>
 								</li>
 								<li class="props-list__li">
-									<a href="#" class="text-danger">Выйти</a>
+									<a href="/" class="text-danger">Выйти</a>
 								</li>
 							</ul>
 						</div>
 					</div>
-				</section>
-			</section>
-		</main>
+				</div>
+			</main>
+		</div>
 		<script src="/js/main.js"></script>
 	</body>
 </html>

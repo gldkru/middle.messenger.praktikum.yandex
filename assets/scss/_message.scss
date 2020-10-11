@@ -1,8 +1,5 @@
 .message-form {
   width: 100%;
-  background-color: #fff;
-  border-top: 1px solid $border-color;
-  padding: $indent-vertical $indent-horizontal;
   display: flex;
   flex-flow: row nowrap;
 
@@ -56,7 +53,7 @@
     #{$this}__inner,
     #{$this}__image {
       border-radius: 0 $border-radius * 2 $border-radius * 2 $border-radius * 2;
-      background-color: #F8F8F8;
+      background-color: lighten($secondary, 3%);
     }
   }
 
@@ -85,10 +82,10 @@
       bottom: $indent-vertical;
       right: $indent-horizontal;
       z-index: 10;
-      background: fade-out(#111, .4);
+      background: fade-out(darken($black, 7%), .4);
       border-radius: 30px;
       padding: .25rem .75rem;
-      color: #fff;
+      color: $text-light;
     }
 
     #{$this}__image {

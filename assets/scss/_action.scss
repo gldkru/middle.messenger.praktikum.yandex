@@ -8,7 +8,7 @@ $indent-action: .5rem;
     border-radius: $border-radius;
     padding: $indent-vertical $indent-horizontal;
     position: absolute;
-    background-color: #fff;
+    background-color: $bg-main;
     box-shadow: $box-shadow;
     overflow: hidden;
   }
@@ -54,11 +54,11 @@ $indent-action: .5rem;
 
     &_danger {
       &:hover {
-        color: $red;
-        background-color: fade-out($red, .9);
+        color: $danger;
+        background-color: fade-out($danger, .9);
 
         #{$this}__icon {
-          color: $red;
+          color: $danger;
         }
       }
     }

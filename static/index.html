@@ -8,16 +8,13 @@
 		<title>Auth</title>
 	</head>
 	<body>
-		<main class="main-window">
-			<section class="main-window__main">
-				<section class="main-area">
-					<div class="main-area__scroll">
-						<div class="main-area__flex">
-							<section class="auth-form">
+		<div class="main-window">
+			<main class="main-window__main">
+        <div class="auth-form">
 								<header class="auth-form__header">
 									<h1>Вход</h1>
 								</header>
-								<form action="#" name="asyncForm">
+								<form action="#" method="POST" name="asyncForm">
 									<ul class="props-list">
 										<li class="props-list__li">
 											<label for="email" class="text-danger props-list__edit-label">Почта</label>
@@ -30,16 +27,13 @@
 										</li>
 									</ul>
 
-									<input type="submit" id="submit-form" class="btn btn_block btn_lg btn_padding" value="Авторизоваться">
+                  <button type="submit" id="submit-form" class="btn btn_block btn_lg btn_padding">Авторизоваться</button>
 									<br />
-									<a href="#" class="btn btn_link">Нет аккаунта?</a>
+									<a href="/registration.html" class="btn btn_link">Нет аккаунта?</a>
 								</form>
-							</section>
-						</div>
-					</div>
-				</section>
-			</section>
-		</main>
+							</div>
+			</main>
+		</div>
 		<script src="/js/main.js"></script>
 	</body>
 </html>

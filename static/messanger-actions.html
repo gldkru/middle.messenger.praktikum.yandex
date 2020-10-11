@@ -8,139 +8,141 @@
 		<title>Messanger actions</title>
 	</head>
 	<body>
-		<main class="main-window">
-			<aside class="main-window__aside">
-				<div class="dialogs-search">
-					<span class="dialogs-search__icon">
-						<svg width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.592 10.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5.001 5.001 0 11.943-.943l3.567 3.567-.943.942-3.566-3.566z" fill="currentColor"/></svg>
-					</span>
-					<input type="text" class="dialogs-search__input input-gray" placeholder="Поиск" value="Кино">
-				</div>
-				<div class="dialogs">
-					<div class="dialog dialog_list">
-						<div class="dialog__avatar">К</div>
-						<div class="dialog__information">
-							<div class="dialog__name">
-								<div class="dialog__author">Киноклуб</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<button class="user-profile">
-					<span>Профиль</span>
-					<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="currentColor"/></svg>
-				</button>
-			</aside>
-			<section class="main-window__main">
-				<section class="main-area">
-					<header class="main-area__header">
-						<div class="dialog">
-							<div class="dialog__avatar">
-								<img class="dialog__avatar-image" src="https://randomuser.me/api/portraits/women/63.jpg" alt="Василиса">
-							</div>
-							<div class="dialog__information">
-								<div class="dialog__name">
-									<div class="dialog__author">Василиса</div>
-								</div>
-								<div class="dialog__preview">
-									<div class="text-muted">Была в сети 2 часа назад</div>
-								</div>
-							</div>
-						</div>
+    <div class="main-window main-window_fixed">
+      <aside class="main-window__aside">
+        <form action="#" method="POST" class="dialogs-search">
+            <span class="dialogs-search__icon">
+              <svg width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.592 10.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5.001 5.001 0 11.943-.943l3.567 3.567-.943.942-3.566-3.566z" fill="currentColor"/></svg>
+            </span>
+          <input type="text" name="dialog-search" class="dialogs-search__input input-gray" placeholder="Поиск" value="Кино">
+        </form>
+        <ul class="dialogs">
+          <li class="dialog dialog_list">
+            <span class="dialog__avatar">К</span>
+            <span class="dialog__information">
+              <span class="dialog__name">
+                <h2 class="dialog__author">Киноклуб</h2>
+              </span>
+            </span>
+          </li>
+        </ul>
+        <a href="/profile.html" class="user-profile">
+          <span>Профиль</span>
+          <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="currentColor"/></svg>
+        </a>
+      </aside>
+      <main class="main-window__main">
+        <div class="main-area">
+          <header class="main-area__header">
+            <div class="dialog">
+              <div class="dialog__avatar">
+                <img class="dialog__avatar-image" src="https://randomuser.me/api/portraits/women/63.jpg" width="47px" height="47px" alt="Василиса">
+              </div>
+              <div class="dialog__information">
+                <div class="dialog__name">
+                  <div class="dialog__author">Василиса</div>
+                </div>
+                <div class="dialog__preview">
+                  <div class="text-muted">Была в сети 2 часа назад</div>
+                </div>
+              </div>
+            </div>
 
-						<button class="btn btn_icon btn_active">
-							<svg width="3" height="16" viewBox="0 0 3 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2" r="1.5" fill="currentColor"/><circle cx="1.5" cy="8" r="1.5" fill="currentColor"/><circle cx="1.5" cy="14" r="1.5" fill="currentColor"/></svg>
-						</button>
-						<div class="action">
-							<div class="action__window action_bottom action_left">
-								<ul class="action-menu">
-									<li class="action-menu__row">
-										<span class="action-menu__icon"><svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 19h22v-1.5H0z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.26 0L19 2.74l-2.055 2.055-2.74-2.74L16.26 0zm-2.74 2.74l2.74 2.74L6.74 15H4v-2.74l9.52-9.52z" fill="currentColor"/></svg></span>
-										<span class="action-menu__text">Переименовать</span>
-									</li>
-									<li class="action-menu__row action-menu__row_danger">
-										<span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="10.25" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-width="1.5" d="M7.111 7.111l7.778 7.778M7.111 14.889l7.778-7.778"/></svg></span>
-										<span class="action-menu__text">Удалить</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</header>
-					<div class="main-area__scroll" id="history">
-						<div class="main-area__scroll-inner">
-							<div class="message message_system">
-								19 июня
-							</div>
-							<div class="message message_get">
-								<div class="message__inner">
-									<div class="message__text">
-										Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.<br /><br />
-										Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
-									</div>
-									<div class="message__meta">
-										<span class="message__time">11:56</span>
-									</div>
-								</div>
-							</div>
-							<div class="message message_get message_type-image">
-								<div class="message__inner">
-									<img class="message__image" src="/images/cat.jpeg" alt="">
-									<div class="message__meta">
-										<span class="message__time">11:58</span>
-									</div>
-								</div>
-							</div>
-							<div class="message message_send">
-								<div class="message__inner">
-									<div class="message__text">
-										Котики это волшебно! 🔮
-									</div>
-									<div class="message__meta">
-										<span class="message__status">
-											<svg width="11" height="5" fill="none" xmlns="http://www.w3.org/2000/svg"><path transform="scale(.99834 1.00166) rotate(45 -2.46 2.011)" stroke="currentColor" d="M0-.5h3.765"/><path transform="matrix(.70593 -.70828 .70593 .70828 3.358 5)" stroke="#3369F3" d="M0-.5h5.647"/><path transform="matrix(.70593 -.70828 .70593 .70828 6.016 5)" stroke="currentColor" d="M0-.5h5.647"/></svg>
-										</span>
-										<span class="message__time">12:02</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<section class="message-form">
-						<div class="message-form__inner">
-							<div class="action">
-								<div class="action__window action_top action_right">
-									<ul class="action-menu">
-										<li class="action-menu__row">
-											<span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 1.5h14A2.5 2.5 0 0120.5 4v10l-5.98-1.595A11.998 11.998 0 0011.427 12h-.856c-1.043 0-2.083.136-3.091.405L1.5 14V4A2.5 2.5 0 014 1.5zM0 4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H4a4 4 0 01-4-4V4zm8 2a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor"/></svg></span>
-											<span class="action-menu__text">Фото или Видео</span>
-										</li>
-										<li class="action-menu__row action-menu__row_active">
-											<span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 1.5h14A2.5 2.5 0 0120.5 4v8H16a4 4 0 00-4 4v4.5H4A2.5 2.5 0 011.5 18V4A2.5 2.5 0 014 1.5zM12 22H4a4 4 0 01-4-4V4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4h-6z" fill="currentColor"/></svg></span>
-											<span class="action-menu__text">Файл</span>
-										</li>
-										<li class="action-menu__row">
-											<span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 11a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0zm1.5 0c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11zm-11 3a3 3 0 100-6 3 3 0 000 6z" fill="currentColor"/></svg></span>
-											<span class="action-menu__text">Локация</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<button class="btn btn_icon btn_active">
-								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.187 12.5l7.576-7.576.943.943-7.577 7.576-.942-.943zM8.7 15.014l7.577-7.576.943.943-7.576 7.576-.943-.943zM14.043 20.357l7.577-7.576.942.942-7.576 7.576-.943-.942zM16.557 22.87l7.576-7.576.943.943-7.576 7.576-.943-.942z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.557 22.87c-2.615 2.616-6.845 2.625-9.449.022-2.603-2.604-2.594-6.834.021-9.45l-.942-.942c-3.139 3.138-3.15 8.215-.026 11.339 3.124 3.124 8.201 3.113 11.34-.025l-.944-.943zM21.62 12.78l.942.943c2.441-2.44 2.45-6.389.02-8.819-2.43-2.43-6.379-2.421-8.82.02l.944.943c1.917-1.918 5.02-1.925 6.929-.016 1.91 1.91 1.902 5.012-.016 6.93z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.7 15.014c-1.743 1.744-1.749 4.564-.013 6.3 1.735 1.735 4.556 1.73 6.3-.014l-.944-.943a3.118 3.118 0 01-4.41.01 3.118 3.118 0 01.01-4.41l-.942-.943z" fill="currentColor"/></svg>
-							</button>
-						</div>
-						<div class="message-form__inner message-form__inner_wide">
-							<textarea type="text" rows="1" class="input-gray" placeholder="Сообщение"></textarea>
-						</div>
-						<div class="message-form__inner">
-							<button class="btn">
-								<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 5.2h11v1.6H0z"/><path d="M7 1l4 5-4 5" stroke="currentColor" stroke-width="1.6"/></svg>
-							</button>
-						</div>
-					</section>
-				</section>
-			</section>
-		</main>
+            <button class="btn btn_icon">
+              <svg width="3" height="16" viewBox="0 0 3 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2" r="1.5" fill="currentColor"/><circle cx="1.5" cy="8" r="1.5" fill="currentColor"/><circle cx="1.5" cy="14" r="1.5" fill="currentColor"/></svg>
+            </button>
+            <div class="action">
+              <div class="action__window action_bottom action_left">
+                <ul class="action-menu">
+                  <li class="action-menu__row">
+                    <span class="action-menu__icon"><svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 19h22v-1.5H0z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.26 0L19 2.74l-2.055 2.055-2.74-2.74L16.26 0zm-2.74 2.74l2.74 2.74L6.74 15H4v-2.74l9.52-9.52z" fill="currentColor"/></svg></span>
+                    <span class="action-menu__text">Переименовать</span>
+                  </li>
+                  <li class="action-menu__row action-menu__row_danger">
+                    <span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="10.25" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-width="1.5" d="M7.111 7.111l7.778 7.778M7.111 14.889l7.778-7.778"/></svg></span>
+                    <span class="action-menu__text">Удалить</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <div class="main-area__scroll" id="history">
+            <div class="main-area__scroll-inner">
+              <div class="message message_system">
+                19 июня
+              </div>
+              <div class="message message_get">
+                <div class="message__inner">
+                  <div class="message__text">
+                    Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.<br /><br />
+                    Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+                  </div>
+                  <div class="message__meta">
+                    <time class="message__time">11:56</time>
+                  </div>
+                </div>
+              </div>
+              <div class="message message_get message_type-image">
+                <div class="message__inner">
+                  <img class="message__image" src="/images/cat.jpeg" alt="">
+                  <div class="message__meta">
+                    <time class="message__time">11:58</time>
+                  </div>
+                </div>
+              </div>
+              <div class="message message_send">
+                <div class="message__inner">
+                  <div class="message__text">
+                    Котики это волшебно! 🔮
+                  </div>
+                  <div class="message__meta">
+                    <span class="message__status">
+                      <svg width="11" height="5" fill="none" xmlns="http://www.w3.org/2000/svg"><path transform="scale(.99834 1.00166) rotate(45 -2.46 2.011)" stroke="currentColor" d="M0-.5h3.765"/><path transform="matrix(.70593 -.70828 .70593 .70828 3.358 5)" stroke="#3369F3" d="M0-.5h5.647"/><path transform="matrix(.70593 -.70828 .70593 .70828 6.016 5)" stroke="currentColor" d="M0-.5h5.647"/></svg>
+                    </span>
+                    <time class="message__time">12:02</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="main-area__footer">
+            <div class="action">
+              <div class="action__window action_top action_right">
+                <ul class="action-menu">
+                  <li class="action-menu__row">
+                    <span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 1.5h14A2.5 2.5 0 0120.5 4v10l-5.98-1.595A11.998 11.998 0 0011.427 12h-.856c-1.043 0-2.083.136-3.091.405L1.5 14V4A2.5 2.5 0 014 1.5zM0 4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H4a4 4 0 01-4-4V4zm8 2a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor"/></svg></span>
+                    <span class="action-menu__text">Фото или Видео</span>
+                  </li>
+                  <li class="action-menu__row action-menu__row_active">
+                    <span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 1.5h14A2.5 2.5 0 0120.5 4v8H16a4 4 0 00-4 4v4.5H4A2.5 2.5 0 011.5 18V4A2.5 2.5 0 014 1.5zM12 22H4a4 4 0 01-4-4V4a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4h-6z" fill="currentColor"/></svg></span>
+                    <span class="action-menu__text">Файл</span>
+                  </li>
+                  <li class="action-menu__row">
+                    <span class="action-menu__icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 11a9.5 9.5 0 11-19 0 9.5 9.5 0 0119 0zm1.5 0c0 6.075-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0s11 4.925 11 11zm-11 3a3 3 0 100-6 3 3 0 000 6z" fill="currentColor"/></svg></span>
+                    <span class="action-menu__text">Локация</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <form action="#" method="POST" class="message-form">
+              <span class="message-form__inner">
+                <button class="btn btn_icon">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.187 12.5l7.576-7.576.943.943-7.577 7.576-.942-.943zM8.7 15.014l7.577-7.576.943.943-7.576 7.576-.943-.943zM14.043 20.357l7.577-7.576.942.942-7.576 7.576-.943-.942zM16.557 22.87l7.576-7.576.943.943-7.576 7.576-.943-.942z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.557 22.87c-2.615 2.616-6.845 2.625-9.449.022-2.603-2.604-2.594-6.834.021-9.45l-.942-.942c-3.139 3.138-3.15 8.215-.026 11.339 3.124 3.124 8.201 3.113 11.34-.025l-.944-.943zM21.62 12.78l.942.943c2.441-2.44 2.45-6.389.02-8.819-2.43-2.43-6.379-2.421-8.82.02l.944.943c1.917-1.918 5.02-1.925 6.929-.016 1.91 1.91 1.902 5.012-.016 6.93z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.7 15.014c-1.743 1.744-1.749 4.564-.013 6.3 1.735 1.735 4.556 1.73 6.3-.014l-.944-.943a3.118 3.118 0 01-4.41.01 3.118 3.118 0 01.01-4.41l-.942-.943z" fill="currentColor"/></svg>
+                </button>
+              </span>
+              <span class="message-form__inner message-form__inner_wide">
+                <textarea type="text" rows="1" class="input-gray" placeholder="Сообщение"></textarea>
+              </span>
+              <span class="message-form__inner">
+                <button type="submit" class="btn">
+                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 5.2h11v1.6H0z"/><path d="M7 1l4 5-4 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </button>
+              </span>
+            </form>
+          </footer>
+        </div>
+      </main>
+    </div>
 		<script src="/js/main.js"></script>
 	</body>
 </html>

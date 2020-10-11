@@ -7,6 +7,8 @@
 }
 
 .dialogs-search {
+  display: block;
+  width: 100%;
   padding: $indent-vertical $indent-horizontal;
   border-bottom: 1px solid $border-color;
   position: relative;
@@ -76,7 +78,7 @@
     width: 47px;
     height: 47px;
     overflow: hidden;
-    background-color: #EFEFEF;
+    background-color: $bg-secondary;
     border-radius: 50%;
     margin-right: $indent-horizontal;
     display: flex;
@@ -123,7 +125,7 @@
     font-size: .75rem;
     border-radius: 50%;
     background-color: $primary;
-    color: #fff;
+    color: $bg-main;
     align-items: center;
     justify-content: center;
     align-self: flex-end;

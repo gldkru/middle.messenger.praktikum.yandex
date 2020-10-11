@@ -55,6 +55,10 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+form {
+  margin: 0;
+}
+
 textarea {
   height: auto;
   min-height: 2.5rem;
@@ -161,6 +165,8 @@ a:hover {
 }
 
 .dialogs-search {
+  display: block;
+  width: 100%;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #EAEAEA;
   position: relative;
@@ -273,9 +279,6 @@ a:hover {
 
 .message-form {
   width: 100%;
-  background-color: #fff;
-  border-top: 1px solid #EAEAEA;
-  padding: 0.75rem 1rem;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -319,7 +322,7 @@ a:hover {
 .message_get .message__inner,
 .message_get .message__image {
   border-radius: 0 16px 16px 16px;
-  background-color: #F8F8F8;
+  background-color: #f7f7f7;
 }
 .message_send {
   text-align: right;
@@ -341,7 +344,7 @@ a:hover {
   bottom: 0.75rem;
   right: 1rem;
   z-index: 10;
-  background: rgba(17, 17, 17, 0.6);
+  background: rgba(33, 33, 33, 0.6);
   border-radius: 30px;
   padding: 0.25rem 0.75rem;
   color: #fff;
@@ -353,6 +356,9 @@ a:hover {
 .main-window {
   display: flex;
   flex-flow: row nowrap;
+  min-height: 100vh;
+}
+.main-window_fixed {
   height: 100vh;
 }
 .main-window__aside {
@@ -373,6 +379,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-area {
@@ -380,6 +388,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 .main-area__header {
   width: 100%;
@@ -389,6 +398,12 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.main-area__footer {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #EAEAEA;
+  padding: 0.75rem 1rem;
 }
 .main-area__scroll {
   flex: 1;
@@ -411,7 +426,7 @@ a:hover {
 
 .error-page {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin: auto;
 }
 .error-page > span {
@@ -531,7 +546,7 @@ a:hover {
 .auth-form {
   width: 100%;
   display: block;
-  margin: auto;
+  margin: 2rem 1rem;
   max-width: 26rem;
   background: #fff;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
