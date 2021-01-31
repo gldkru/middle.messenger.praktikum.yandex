@@ -1,54 +1,14 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/normalize.css" />
-		<link rel="stylesheet" href="/styles/main.css" />
-		<title>Profile</title>
-	</head>
-	<body>
-		<div class="main-window main-window_fixed">
-			<aside class="main-window__aside main-window__aside_back">
-				<button class="btn">
-					<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13 6.8H2V5.2h11z"/><path d="M6 11L2 6l4-5" stroke="currentColor" stroke-width="1.6"/></svg>
-				</button>
-			</aside>
-			<main class="main-window__main">
-				<div class="main-area">
-					<div class="main-area__scroll">
-						<div class="container">
-							<div class="user-detail">
-								<div class="user-detail__avatar"></div>
-								<div class="user-detail__display-name">
-									<h1>Кирилл</h1>
-								</div>
-							</div>
-
-							<ul class="props-list">
-								<li class="props-list__li">
-									<span>Почта</span>
-									<span class="text-muted">mail@inbox.com</span>
-								</li>
-								<li class="props-list__li">
-									<span>Логин</span>
-									<span class="text-muted">username</span>
-								</li>
-							</ul>
-
-							<ul class="props-list">
-								<li class="props-list__li">
-									<a href="/profile-edit.html">Изменить данные</a>
-								</li>
-								<li class="props-list__li">
-									<a href="/" class="text-danger">Выйти</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</main>
-		</div>
-		<script src="/js/main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/pages/Profile.js" type="module"></script>
+  </body>
 </html>

@@ -458,6 +458,7 @@ a:hover {
   user-select: none;
   font-size: 0.9rem;
   padding: 1rem;
+  font-weight: normal;
 }
 
 .user-detail {

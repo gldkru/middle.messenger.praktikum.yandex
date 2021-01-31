@@ -17,6 +17,9 @@
 		"url": "https://github.com/gldkru/mf.messenger.praktikum.yandex/issues"
 	},
 	"homepage": "https://github.com/gldkru/mf.messenger.praktikum.yandex#readme",
+	"dependencies": {
+		"handlebars": "^4.7.6"
+	},
 	"devDependencies": {
 		"express": "^4.17.1"
 	}

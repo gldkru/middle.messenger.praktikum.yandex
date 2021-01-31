@@ -1,39 +1,14 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/normalize.css" />
-		<link rel="stylesheet" href="/styles/main.css" />
-		<title>Auth</title>
-	</head>
-	<body>
-		<div class="main-window">
-			<main class="main-window__main">
-        <div class="auth-form">
-								<header class="auth-form__header">
-									<h1>Вход</h1>
-								</header>
-								<form action="#" method="POST" name="asyncForm">
-									<ul class="props-list">
-										<li class="props-list__li">
-											<label for="email" class="text-danger props-list__edit-label">Почта</label>
-											<input id="email" name="email" type="email" class="props-list__edit" value="" placeholder="a@gldk.ru">
-										</li>
-										<li class="props-list__error text-danger text-sm">Такого пользователя не существует</li>
-										<li class="props-list__li">
-											<label for="password" class="props-list__edit-label">Пароль</label>
-											<input id="password" name="password" type="password" class="props-list__edit" value="" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-										</li>
-									</ul>
-
-                  <button type="submit" id="submit-form" class="btn btn_block btn_lg btn_padding">Авторизоваться</button>
-									<br />
-									<a href="/registration.html" class="btn btn_link">Нет аккаунта?</a>
-								</form>
-							</div>
-			</main>
-		</div>
-		<script src="/js/main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Auth</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/pages/Login.js" type="module"></script>
+  </body>
 </html>

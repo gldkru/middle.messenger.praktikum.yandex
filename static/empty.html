@@ -1,89 +1,14 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/normalize.css" />
-		<link rel="stylesheet" href="/styles/main.css" />
-		<title>Main area empty</title>
-	</head>
-	<body>
-    <div class="main-window main-window_fixed">
-      <aside class="main-window__aside">
-        <form action="#" method="POST" class="dialogs-search">
-            <span class="dialogs-search__icon">
-              <svg width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.592 10.414a3.667 3.667 0 11-5.185-5.186 3.667 3.667 0 015.185 5.186zm.44 1.383a5.001 5.001 0 11.943-.943l3.567 3.567-.943.942-3.566-3.566z" fill="currentColor"/></svg>
-            </span>
-          <input type="text" name="dialog-search" class="dialogs-search__input input-gray" placeholder="Поиск">
-        </form>
-        <ul class="dialogs">
-          <li class="dialog dialog_list">
-              <span class="dialog__avatar">
-                <img class="dialog__avatar-image" src="https://randomuser.me/api/portraits/men/93.jpg" width="47px" height="47px" alt="Андрей">
-              </span>
-            <span class="dialog__information">
-                <span class="dialog__name">
-                  <h2 class="dialog__author">Андрей</h2>
-                  <time class="dialog__time">10:49</time>
-                </span>
-                <span class="dialog__preview">
-                  <span class="dialog__short-message">Изображение</span>
-                  <span class="dialog__counter">3</span>
-                </span>
-              </span>
-          </li>
-          <li class="dialog dialog_list dialog_active">
-              <span class="dialog__avatar">
-                <img class="dialog__avatar-image" src="https://randomuser.me/api/portraits/women/63.jpg" width="47px" height="47px" alt="Василиса">
-              </span>
-            <span class="dialog__information">
-                <span class="dialog__name">
-                  <h2 class="dialog__author">Василиса</h2>
-                  <time class="dialog__time">Вт</time>
-                </span>
-                <span class="dialog__preview">
-                  <span class="dialog__short-message">Изображение и текст в 2 строки как результат...</span>
-                </span>
-              </span>
-          </li>
-          <li class="dialog dialog_list">
-              <span class="dialog__avatar">
-                <img class="dialog__avatar-image" src="https://randomuser.me/api/portraits/men/41.jpg" width="47px" height="47px" alt="Виталик">
-              </span>
-            <span class="dialog__information">
-                <span class="dialog__name">
-                  <h2 class="dialog__author">Виталик</h2>
-                  <time class="dialog__time">10:49</time>
-                </span>
-                <span class="dialog__preview">
-                  <span class="dialog__short-message"><span class="dialog__sender">Вы:</span> Изображение</span>
-                  <span class="dialog__counter">1</span>
-                </span>
-              </span>
-          </li>
-          <li class="dialog dialog_list">
-            <span class="dialog__avatar">ВН</span>
-            <span class="dialog__information">
-                <span class="dialog__name">
-                  <h2 class="dialog__author">Валерий Николаев</h2>
-                  <time class="dialog__time">11.05.2020</time>
-                </span>
-                <span class="dialog__preview">
-                  <span class="dialog__short-message">Изображение и текст в 2 строки как результат</span>
-                  <span class="dialog__counter">1</span>
-                </span>
-              </span>
-          </li>
-        </ul>
-        <a href="/profile.html" class="user-profile">
-          <span>Профиль</span>
-          <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9l4-4-4-4" stroke="currentColor"/></svg>
-        </a>
-      </aside>
-      <main class="main-window__main">
-        <div class="empty-message">Выберите чат чтобы отправить сообщение</div>
-      </main>
-    </div>
-		<script src="/js/main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Main area empty</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/pages/SelectChat.js" type="module"></script>
+  </body>
 </html>
