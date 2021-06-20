@@ -12,4 +12,4 @@
 - [50*](https://gracious-perlman-3492c3.netlify.app/500.html)
 
 ## Next
-[PR for sprint 2](https://github.com/gldkru/mf.messenger.praktikum.yandex/pull/6)
+https://github.com/gldkru/mf.messenger.praktikum.yandex/pull/6
