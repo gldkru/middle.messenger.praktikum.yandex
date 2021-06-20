@@ -3,9 +3,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/normalize.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <title>Messanger actions</title>
+    <link rel="stylesheet" href="../src/assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="../src/assets/scss/main.scss" />
+    <title>Messenger actions</title>
   </head>
   <body>
     <div class="main-window main-window_fixed">
@@ -39,7 +39,7 @@
             </span>
           </li>
         </ul>
-        <a href="/profile.html" class="user-profile">
+        <a href="profile.html" class="user-profile">
           <span>Профиль</span>
           <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 9l4-4-4-4" stroke="currentColor" />
@@ -110,9 +110,7 @@
           </header>
           <div class="main-area__scroll" id="history">
             <div class="main-area__scroll-inner">
-              <div class="message message_system">
-                19 июня
-              </div>
+              <div class="message message_system">19 июня</div>
               <div class="message message_get">
                 <div class="message__inner">
                   <div class="message__text">
@@ -131,7 +129,7 @@
               </div>
               <div class="message message_get message_type-image">
                 <div class="message__inner">
-                  <img class="message__image" src="/images/cat.jpeg" alt="" />
+                  <img class="message__image" src="images/cat.jpeg" alt="" />
                   <div class="message__meta">
                     <time class="message__time">11:58</time>
                   </div>
@@ -139,9 +137,7 @@
               </div>
               <div class="message message_send">
                 <div class="message__inner">
-                  <div class="message__text">
-                    Котики это волшебно! 🔮
-                  </div>
+                  <div class="message__text">Котики это волшебно! 🔮</div>
                   <div class="message__meta">
                     <span class="message__status">
                       <svg width="11" height="5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -252,6 +248,6 @@
         </div>
       </main>
     </div>
-    <script src="/js/main.js"></script>
+    <!-- <script src="/js/main.js"></script> -->
   </body>
 </html>

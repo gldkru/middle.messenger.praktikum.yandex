@@ -1,7 +1,7 @@
-import { vdom, templator } from "../../modules/Templator.js";
-import { template } from "./template.js";
-import BaseComponent from "../../modules/BaseComponent.js";
-import { IChatEmptyContext } from "./types.js";
+import { vdom, templator } from '../../modules/Templator';
+import template from './template';
+import BaseComponent from '../../modules/BaseComponent';
+import { IChatEmptyContext } from './types';
 
 export default class ChatEmpty extends BaseComponent<IChatEmptyContext> {
   rerender() {

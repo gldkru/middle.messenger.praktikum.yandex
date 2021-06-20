@@ -1,14 +1,8 @@
-// Main event bus interface
-export interface IEventBus {
-  subscribe(subscription: string, handler: any): void;
-  unsubscribe(subscription: string, handler: any): void;
-  emit(event: string, ...args: string[]): void;
-}
+type Callback = (...args: any[]) => void;
+type Listeners = Record<string, Callback[]>;
 
 export default class EventBus {
-  readonly listeners: {
-    [key: string]: string[];
-  };
+  readonly listeners: Listeners;
 
   constructor() {
     this.listeners = {};
@@ -27,7 +21,9 @@ export default class EventBus {
       throw new Error(`Нет события: ${subscription}`);
     }
 
-    this.listeners[subscription] = this.listeners[subscription].filter(listener => listener !== handler);
+    this.listeners[subscription] = this.listeners[subscription].filter(
+      (listener) => listener !== handler,
+    );
   }
 
   emit(event: string, ...args: string[]): void {
@@ -35,7 +31,7 @@ export default class EventBus {
       throw new Error(`Нет события: ${event}`);
     }
 
-    this.listeners[event].forEach(function(listener: any) {
+    this.listeners[event].forEach((listener: any) => {
       listener(...args);
     });
   }

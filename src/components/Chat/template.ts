@@ -1,4 +1,4 @@
-export const template = `
+const template = `
 <div class="main-area">
   <header class="main-area__header">
     <div class="dialog">
@@ -37,7 +37,7 @@ export const template = `
       </div>
       <div class="message message_get message_type-image">
         <div class="message__inner">
-          <img class="message__image" src="/images/cat.jpeg" alt=""/>
+          <img class="message__image" src="images/cat.jpeg" alt=""/>
           <div class="message__meta">
             <time class="message__time">11:58</time>
           </div>
@@ -77,3 +77,5 @@ export const template = `
   </footer>
 </div>
 `;
+
+export default template;

@@ -1,8 +1,8 @@
-import { templator } from "../../modules/Templator.js";
-import VirtualDom from "../../modules/VirtualDom.js";
-import { template } from "./template.js";
-import BaseComponent from "../../modules/BaseComponent.js";
-import { IAsideContext } from "./types.js";
+import { templator } from '../../modules/Templator';
+import VirtualDom from '../../modules/VirtualDom';
+import template from './template';
+import BaseComponent from '../../modules/BaseComponent';
+import { IAsideContext } from './types';
 
 const vdom = new VirtualDom();
 

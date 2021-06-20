@@ -1,9 +1,9 @@
-import { templator } from "../modules/Templator.js";
-import ErrorPage from "../components/ErrorPage/index.js";
+import { templator } from '../modules/Templator';
+import ErrorPage from '../components/ErrorPage';
 
 const page = new ErrorPage({
   code: 404,
-  text: "Не туда попали"
+  text: 'Не туда попали',
 });
 
-templator.render(page.getContent(), "#app");
+templator.render(page.getContent(), '#app');

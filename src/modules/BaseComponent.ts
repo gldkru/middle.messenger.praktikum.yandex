@@ -1,16 +1,18 @@
-import EventBus from "./EventBus.js";
+import EventBus from './EventBus';
 
 const enum ComponentEvents {
-  INIT = "init",
-  FLOW_CDM = "flow:component-did-mount",
-  FLOW_CDU = "flow:component-did-update",
-  FLOW_CWU = "flow:component-will-unmount",
-  FLOW_RENDER = "flow:render"
+  INIT = 'init',
+  FLOW_CDM = 'flow:component-did-mount',
+  FLOW_CDU = 'flow:component-did-update',
+  FLOW_CWU = 'flow:component-will-unmount',
+  FLOW_RENDER = 'flow:render',
 }
 
 export default abstract class BaseComponent<TProps extends object> {
   protected readonly props?: TProps;
+
   private readonly eventBus: () => EventBus;
+
   private _element: any;
 
   constructor(props: TProps) {
@@ -75,18 +77,18 @@ export default abstract class BaseComponent<TProps extends object> {
       get(target: TProps, prop: keyof TProps) {
         const value = target[prop];
 
-        return typeof value === "function" ? value.bind(target) : value;
+        return typeof value === 'function' ? value.bind(target) : value;
       },
       set(target: TProps, prop: keyof TProps, value: any) {
-        target[prop] = value;
+        target[prop] = value; // eslint-disable-line no-param-reassign
 
         // Запускаем обновление компоненты
         eventBus.emit(ComponentEvents.FLOW_CDU);
         return true;
       },
       deleteProperty() {
-        throw new Error("Нет доступа");
-      }
+        throw new Error('Нет доступа');
+      },
     };
 
     return new Proxy(props, handler);

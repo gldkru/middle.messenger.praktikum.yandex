@@ -3,7 +3,7 @@
 Проектная работа для Яндекс.Практикум
 
 - [x] 1 спринт
-- [ ] 2 спринт
+- [x] 2 спринт
 - [ ] 3 спринт
 - [ ] 4 спринт
 
@@ -13,12 +13,15 @@
 - Класс BaseComponent для работы с компонентами
 - Класс EventBus для реализации жизненного цикла компонента
 - Валидация форм с помощью регулярных выражений
+- Typescript
+- ESLint
+- Stylelint
 
 ## [Проект на Netlify](https://gracious-perlman-3492c3.netlify.app/)
 
 - [Авторизация](https://gracious-perlman-3492c3.netlify.app/)
 - [Регистрация](https://gracious-perlman-3492c3.netlify.app/registration.html)
-- [Мессенджер](https://gracious-perlman-3492c3.netlify.app/messanger.html)
+- [Мессенджер](https://gracious-perlman-3492c3.netlify.app/messenger.html)
 - [Мессенджер (без активного чата)](https://gracious-perlman-3492c3.netlify.app/empty.html)
 - [Профиль пользователя](https://gracious-perlman-3492c3.netlify.app/profile.html)
 - [Редактирование профиля пользователя](https://gracious-perlman-3492c3.netlify.app/profile-edit.html)

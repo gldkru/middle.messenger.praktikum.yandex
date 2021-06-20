@@ -3,12 +3,12 @@ export const enum PatchType {
   REPLACE,
   REMOVE,
   PROPS,
-  TEXT
+  TEXT,
 }
 
 export enum NodeTypes {
   TAG,
-  TEXT
+  TEXT,
 }
 
 export type TemplatePropsContext = {

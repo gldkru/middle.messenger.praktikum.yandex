@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 * {
   box-sizing: border-box;
   outline: none !important;
@@ -5,23 +7,23 @@
 
 body,
 html {
-  height: 100%;
+  background: $bg-main;
+  color: $text-main;
   font-family: $font-family;
   font-size: 14px;
+  height: 100%;
   line-height: 1.4;
-  color: $text-main;
-  background: $bg-main;
 }
 
 button,
 input,
 textarea {
-  font-family: $font-family;
-  font-size: .9rem;
-  border-radius: $border-radius;
-  height: $input-height;
-  border: none;
   background-color: transparent;
+  border: 0;
+  border-radius: $border-radius;
+  font-family: $font-family;
+  font-size: 0.9rem;
+  height: $input-height;
 }
 
 ul {
@@ -48,10 +50,13 @@ h3 {
 }
 
 h4 {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
   margin: 0;
 }
@@ -67,11 +72,11 @@ textarea {
 }
 
 .input-gray {
-  width: 100%;
-  height: $input-height;
-  padding: .8rem $input-height / 1.5;
-  border-radius: $input-height / 2;
   background-color: $secondary;
+  border-radius: math.div($input-height, 2);
+  height: $input-height;
+  padding: 0.8rem math.div($input-height, 1.5);
+  width: 100%;
 }
 
 a {
@@ -79,21 +84,21 @@ a {
   text-decoration: none;
 
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
 .btn {
   $this: &;
+  background-color: $primary;
+  border-radius: math.div($input-height, 2);
+  color: $text-light;
+  cursor: pointer;
 
   display: inline-block;
-  background-color: $primary;
   height: $input-height;
-  border-radius: $input-height / 2;
-  color: $text-light;
-  text-align: center;
   min-width: $input-height;
-  cursor: pointer;
+  text-align: center;
   user-select: none;
 
   &_active,
@@ -118,11 +123,11 @@ a {
   }
 
   &_block {
-    display: block;
-    width: 100%;
     border-radius: $border-radius;
-    max-width: 24rem;
+    display: block;
     margin: 0 auto;
+    max-width: 24rem;
+    width: 100%;
   }
 
   &_lg {
@@ -131,9 +136,9 @@ a {
   }
 
   &_link {
-    height: auto;
     background-color: transparent;
     color: $primary;
+    height: auto;
 
     &:hover {
       background-color: transparent;
@@ -146,8 +151,8 @@ a {
     color: $text-light;
 
     &:hover {
-      color: $text-light;
       background-color: lighten($danger, 7%);
+      color: $text-light;
     }
   }
 
@@ -156,8 +161,8 @@ a {
     color: $black;
 
     &:hover {
-      color: $black;
       background-color: lighten($gray, 2%);
+      color: $black;
     }
   }
 }
@@ -171,5 +176,5 @@ a {
 }
 
 .text-sm {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }

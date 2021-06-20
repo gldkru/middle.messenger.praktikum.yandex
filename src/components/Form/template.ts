@@ -1,4 +1,4 @@
-export const template = `
+const template = `
 <form action="#" method="POST" name="{{ name }}" onsubmit="{{ onSubmit }}">
   <ul class="props-list">
     {{ content }}
@@ -7,3 +7,5 @@ export const template = `
   <br />
 </form>
 `;
+
+export default template;

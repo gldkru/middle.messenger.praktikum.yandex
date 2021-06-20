@@ -1,18 +1,18 @@
-import { templator } from "../modules/Templator.js";
-import Aside from "../components/Aside/index.js";
-import Window from "../components/Window/index.js";
-import ChatEmpty from "../components/ChatEmpty/index.js";
+import { templator } from '../modules/Templator';
+import Aside from '../components/Aside';
+import Window from '../components/Window';
+import ChatEmpty from '../components/ChatEmpty';
 
 // todo: научиться писть дженерики без пропсов
 const aside = new Aside({});
 
 const chatEmpty = new ChatEmpty({
-  text: "Выберите чат чтобы отправить сообщение"
+  text: 'Выберите чат чтобы отправить сообщение',
 });
 
 const page = new Window({
   asideContent: aside.getContent(),
-  content: chatEmpty.getContent()
+  content: chatEmpty.getContent(),
 });
 
-templator.render(page.getContent(), "#app");
+templator.render(page.getContent(), '#app');

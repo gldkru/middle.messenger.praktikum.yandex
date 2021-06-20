@@ -1,49 +1,55 @@
-import { NodeTypes, ElementNode, TextElementNode, VNode, ElementAttributes, Patch, PatchType } from "../types/index.js";
-import VirtualDom from "./VirtualDom.js";
-import * as Helpers from "../utils/templateHelpers.js";
+import {
+  NodeTypes, ElementNode, TextElementNode, VNode, ElementAttributes, Patch, PatchType,
+} from '../types';
+import VirtualDom from './VirtualDom';
+import {
+  isSvgTag, isEventProp, extractEventName, diff,
+} from '../utils/templateHelpers';
 
 export default class Templator {
   private nodeCache: WeakMap<VNode, HTMLElement | Text | SVGElement>;
 
+  private diffHelper;
+
   constructor() {
     this.nodeCache = new WeakMap();
+    this.diffHelper = diff;
   }
 
   createElement(element: VNode): HTMLElement | Text | SVGElement {
     if (element.type === NodeTypes.TEXT) {
-      const text = (element as TextElementNode).content ? (element as TextElementNode).content : "";
+      const text = (element as TextElementNode).content ? (element as TextElementNode).content : '';
       const dom = document.createTextNode(text);
 
       this.setCache(element, dom);
 
       return dom;
-    } else {
-      const tagName = (element as ElementNode).name;
-      const dom: HTMLElement | SVGElement = !Helpers.isSvgTag(tagName)
-        ? document.createElement(tagName ? tagName : "div")
-        : document.createElementNS("http://www.w3.org/2000/svg", tagName);
-      const children = (element as ElementNode).children;
-
-      if (children && children.length) {
-        children.forEach(child => {
-          const childElement = this.createElement(child);
-          dom.appendChild(childElement);
-        });
-      }
-
-      const attrs = (element as ElementNode).attributes;
-      if (attrs) {
-        this.applyAttributes(dom, attrs);
-      }
-
-      this.setCache(element, dom);
-
-      return dom;
     }
+    const tagName = (element as ElementNode).name;
+    const dom: HTMLElement | SVGElement = !isSvgTag(tagName)
+      ? document.createElement(tagName || 'div')
+      : document.createElementNS('http://www.w3.org/2000/svg', tagName);
+    const { children } = element as ElementNode;
+
+    if (children && children.length) {
+      children.forEach((child) => {
+        const childElement = this.createElement(child);
+        dom.appendChild(childElement);
+      });
+    }
+
+    const attrs = (element as ElementNode).attributes;
+    if (attrs) {
+      this.applyAttributes(dom, attrs);
+    }
+
+    this.setCache(element, dom);
+
+    return dom;
   }
 
   diff(oldTree: VNode, newTree: VNode): Patch[] {
-    let patches: Patch[] = [];
+    const patches: Patch[] = [];
 
     this.runDiff(oldTree, newTree, patches);
 
@@ -51,17 +57,15 @@ export default class Templator {
   }
 
   patch(patches: Patch[]): void {
-    for (const patch of patches) {
-      this.applyPatch(patch);
-    }
+    patches.forEach((patch) => this.applyPatch(patch));
   }
 
   private applyAttributes(element: HTMLElement | SVGElement, attrs: ElementAttributes): void {
-    for (const key in attrs) {
+    Object.keys(attrs).forEach((key) => {
       const value: string | undefined = attrs[key];
 
-      if (Helpers.isEventProp(key)) {
-        const eventName = Helpers.extractEventName(key);
+      if (isEventProp(key)) {
+        const eventName = extractEventName(key);
 
         this.addEventListener(element, eventName, value);
       } else if (value === undefined) {
@@ -69,16 +73,21 @@ export default class Templator {
       } else {
         element.setAttribute(key, value);
       }
-    }
+    });
   }
 
-  private diffChildren(oldParent: ElementNode, newParent: ElementNode, parentNode: HTMLElement, patches: Patch[]) {
+  private diffChildren(
+    oldParent: ElementNode,
+    newParent: ElementNode,
+    parentNode: HTMLElement,
+    patches: Patch[],
+  ) {
     // todo: if not children
     const oldChildren: VNode[] = oldParent.children;
     const newChildren: VNode[] = newParent.children;
     const length: number = Math.max(oldChildren.length, newChildren.length);
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < length; i += 1) {
       const oldChild = oldChildren[i];
       const newChild = newChildren[i];
 
@@ -87,14 +96,14 @@ export default class Templator {
         patches.push({
           type: PatchType.APPEND,
           node: newChild,
-          domNode: parentNode
+          domNode: parentNode,
         });
 
         // REMOVE OLD
       } else if (newChild === undefined) {
         patches.push({
           type: PatchType.REMOVE,
-          domNode: this.nodeCache.get(oldChild)!
+          domNode: this.nodeCache.get(oldChild)!,
         });
         // DIFF THE REST
       } else {
@@ -113,21 +122,21 @@ export default class Templator {
       patches.push({
         type: PatchType.REPLACE,
         node: newNode,
-        domNode
+        domNode,
       });
     } else {
       switch (oldNode.type) {
-        case NodeTypes.TAG:
+        case NodeTypes.TAG: {
           if ((oldNode as ElementNode).name !== (newNode as ElementNode).name) {
             patches.push({
               type: PatchType.REPLACE,
               node: newNode,
-              domNode
+              domNode,
             });
           } else {
             const propsDiff: ElementAttributes | undefined = this.diffAttributes(
               (oldNode as ElementNode).attributes,
-              (newNode as ElementNode).attributes
+              (newNode as ElementNode).attributes,
             );
 
             // todo: && domNode - hotfix от потери родителя
@@ -137,68 +146,88 @@ export default class Templator {
               patches.push({
                 type: PatchType.PROPS,
                 attributes: propsDiff,
-                domNode: domNode as HTMLElement
+                domNode: domNode as HTMLElement,
               });
             }
 
-            this.diffChildren(oldNode as ElementNode, newNode as ElementNode, domNode as HTMLElement, patches);
+            this.diffChildren(
+              oldNode as ElementNode,
+              newNode as ElementNode,
+              domNode as HTMLElement,
+              patches,
+            );
           }
 
           break;
-        case NodeTypes.TEXT:
+        }
+        case NodeTypes.TEXT: {
           if ((oldNode as TextElementNode).content !== (newNode as TextElementNode).content) {
             patches.push({
               type: PatchType.TEXT,
-              value: (newNode as TextElementNode).content || "",
-              domNode: domNode as Text
+              value: (newNode as TextElementNode).content || '',
+              domNode: domNode as Text,
             });
           }
 
           break;
+        }
+        default: {
+          break;
+        }
       }
     }
   }
 
-  private diffAttributes(oldAttrs?: ElementAttributes, newAttrs?: ElementAttributes) {
+  private diffAttributes(
+    oldAttrs?: ElementAttributes,
+    newAttrs?: ElementAttributes,
+  ): ElementAttributes | undefined {
     if (oldAttrs === undefined || newAttrs === undefined) return;
 
-    let diff: ElementAttributes | undefined = Helpers.diff(newAttrs, oldAttrs);
-
-    return diff;
+    // eslint-disable-next-line consistent-return
+    return this.diffHelper(newAttrs, oldAttrs);
   }
 
   private applyPatch(patch: Patch): void {
     switch (patch.type) {
-      case PatchType.TEXT:
-        patch.domNode.textContent = patch.value;
+      case PatchType.TEXT: {
+        patch.domNode.textContent = patch.value; // eslint-disable-line no-param-reassign
         break;
-      case PatchType.PROPS:
+      }
+      case PatchType.PROPS: {
         this.applyAttributes(patch.domNode, patch.attributes);
         break;
-      case PatchType.REMOVE:
-        const parentNode: Node | null = patch.domNode.parentNode;
+      }
+      case PatchType.REMOVE: {
+        const { parentNode } = patch.domNode;
 
         if (parentNode !== null) {
           parentNode.removeChild(patch.domNode);
         }
 
         break;
-      case PatchType.REPLACE:
+      }
+      case PatchType.REPLACE: {
         const toReplace: Node = patch.domNode;
         const replacement: Node = this.createElement(patch.node);
 
         this.replaceElement(replacement, toReplace);
 
         break;
-      case PatchType.APPEND:
+      }
+      case PatchType.APPEND: {
         const element = this.createElement(patch.node);
         patch.domNode.appendChild(element);
         break;
+      }
+      default: {
+        break;
+      }
     }
   }
 
   private replaceElement(replacement: Node, toReplace: Node): void {
-    const parentNode: Node | null = toReplace.parentNode;
+    const { parentNode } = toReplace;
 
     if (parentNode !== null) {
       parentNode.replaceChild(replacement, toReplace);
@@ -208,12 +237,11 @@ export default class Templator {
   private addEventListener(element: HTMLElement | SVGElement, eventName: string, event: any) {
     if (event !== undefined) {
       element.addEventListener(eventName, event);
-    } else {
+    } else if (element.parentNode) {
       // не знаю как удалить event через removeEventListener
       // так как в новом объекте может не быть event
-      if (element.parentNode) {
-        element.parentNode.replaceChild(element.cloneNode(true), element);
-      }
+
+      element.parentNode.replaceChild(element.cloneNode(true), element);
     }
   }
 
@@ -238,7 +266,7 @@ export default class Templator {
   render(virtualDom: VNode, containerName: string): HTMLElement {
     const container = document.querySelector(containerName) as HTMLElement;
 
-    if (!container) throw new Error("--> Container not found");
+    if (!container) throw new Error('--> Container not found');
 
     const result: HTMLElement | Text | SVGElement = this.createElement(virtualDom);
 

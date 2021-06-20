@@ -1,4 +1,4 @@
-export const template = `
+const template = `
 <div class="main-area">
   <div class="main-area__scroll">
     <form class="container" action="#" method="POST" name="asyncForm" onsubmit="{{ onSubmit }}">
@@ -21,3 +21,5 @@ export const template = `
   </div>
 </div>
 `;
+
+export default template;

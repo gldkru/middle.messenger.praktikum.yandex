@@ -1,10 +1,12 @@
+@use 'sass:math';
+
 .message-form {
-  width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  width: 100%;
 
   &__inner {
-    padding: 0 $indent-horizontal / 2;
+    padding: 0 math.div($indent-horizontal, 2);
 
     &_wide {
       flex: 1;
@@ -14,24 +16,24 @@
 
 .message {
   $this: &;
+  margin-bottom: 1rem;
 
   width: 100%;
-  margin-bottom: 1rem;
 
   &__inner {
     display: inline-block;
-    position: relative;
     max-width: 60%;
-    text-align: left;
-    padding: $indent-horizontal;
     overflow: hidden;
+    padding: $indent-horizontal;
+    position: relative;
+    text-align: left;
   }
 
   &__meta {
     color: $text-muted;
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
     text-align: right;
-    margin-top: .4rem;
-    font-size: .75rem;
     user-select: none;
   }
 
@@ -44,16 +46,16 @@
   }
 
   &_system {
-    text-align: center;
     color: $text-muted;
     margin: $indent-vertical * 2 0;
+    text-align: center;
   }
 
   &_get {
     #{$this}__inner,
     #{$this}__image {
-      border-radius: 0 $border-radius * 2 $border-radius * 2 $border-radius * 2;
       background-color: lighten($secondary, 3%);
+      border-radius: 0 $border-radius * 2 $border-radius * 2 $border-radius * 2;
     }
   }
 
@@ -66,26 +68,26 @@
 
     #{$this}__inner,
     #{$this}__image {
-      border-radius: $border-radius * 2 0 $border-radius * 2 $border-radius * 2;
       background-color: $bg-active;
+      border-radius: $border-radius * 2 0 $border-radius * 2 $border-radius * 2;
     }
   }
 
   &_type-image {
     #{$this}__inner {
-      padding: 0;
       border: 1px solid $border-color;
+      padding: 0;
     }
 
     #{$this}__meta {
-      position: absolute;
+      background: fade-out(darken($black, 7%), 0.4);
+      border-radius: 30px;
       bottom: $indent-vertical;
+      color: $text-light;
+      padding: 0.25rem 0.75rem;
+      position: absolute;
       right: $indent-horizontal;
       z-index: 10;
-      background: fade-out(darken($black, 7%), .4);
-      border-radius: 30px;
-      padding: .25rem .75rem;
-      color: $text-light;
     }
 
     #{$this}__image {

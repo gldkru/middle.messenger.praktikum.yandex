@@ -1,23 +1,23 @@
 // Colors
 $black: #333;
-$gray: #E2E2E2;
-$primary: #3E6BEA;
-$secondary: #EFEFEF;
-$danger: #FF0000;
+$gray: #e2e2e2;
+$primary: #3e6bea;
+$secondary: #efefef;
+$danger: #f00;
 
 // Shadows
-$box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+$box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
 
 // Backgrounds
 $bg-main: #fff;
-$bg-active: fade-out($primary, .9);
-$bg-dialogs: #FBFBFB;
+$bg-active: fade-out($primary, 0.9);
+$bg-dialogs: #fbfbfb;
 $bg-primary: $primary;
 $bg-secondary: $secondary;
 $bg-danger: $danger;
 
 // Border
-$border-color: #EAEAEA;
+$border-color: #eaeaea;
 $border-radius: 8px;
 
 // Text
@@ -40,5 +40,5 @@ $transition-all: all $transition-duration $transition-timing-function;
 $input-height: 2.5rem;
 
 // Padding
-$indent-vertical: .75rem;
+$indent-vertical: 0.75rem;
 $indent-horizontal: 1rem;

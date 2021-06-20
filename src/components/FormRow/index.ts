@@ -1,8 +1,8 @@
-import { templator } from "../../modules/Templator.js";
-import BaseComponent from "../../modules/BaseComponent.js";
-import VirtualDom from "../../modules/VirtualDom.js";
-import { IFormRowContext } from "./types.js";
-import { template } from "./template.js";
+import { templator } from '../../modules/Templator';
+import BaseComponent from '../../modules/BaseComponent';
+import VirtualDom from '../../modules/VirtualDom';
+import { IFormRowContext } from './types';
+import template from './template';
 
 const vdom = new VirtualDom();
 

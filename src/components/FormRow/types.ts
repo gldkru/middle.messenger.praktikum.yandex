@@ -1,7 +1,7 @@
 export enum InputTypes {
-  TEXT = "text",
-  EMAIL = "email",
-  PASSWORD = "password"
+  TEXT = 'text',
+  EMAIL = 'email',
+  PASSWORD = 'password',
 }
 
 export interface IFormRowContext {

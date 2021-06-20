@@ -12,17 +12,8 @@
     "noUnusedParameters": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
-    "lib": [
-      "es5",
-      "es6",
-      "es2017",
-      "es2019",
-      "dom",
-      "es2015.collection"
-    ]
+    "lib": ["es5", "es6", "es2017", "es2019", "dom", "es2015.collection"]
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"],
   "exclude": []
 }

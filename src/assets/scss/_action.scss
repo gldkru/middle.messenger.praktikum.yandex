@@ -1,16 +1,16 @@
-$indent-action: .5rem;
+$indent-action: 0.5rem;
 
 .action {
   position: relative;
 
   &__window {
-    width: 12rem;
-    border-radius: $border-radius;
-    padding: $indent-vertical $indent-horizontal;
-    position: absolute;
     background-color: $bg-main;
+    border-radius: $border-radius;
     box-shadow: $box-shadow;
     overflow: hidden;
+    padding: $indent-vertical $indent-horizontal;
+    position: absolute;
+    width: 12rem;
   }
 
   .action-menu {
@@ -22,14 +22,17 @@ $indent-action: .5rem;
     // todo: вычислять позицию через JS и position fixed
     margin-bottom: $indent-action;
   }
+
   &_bottom {
-    top: 0;
     // todo: вычислять позицию через JS и position fixed
     margin-top: $input-height - $indent-action;
+    top: 0;
   }
+
   &_left {
     right: 0;
   }
+
   &_right {
     left: 0;
   }
@@ -38,13 +41,13 @@ $indent-action: .5rem;
 .action-menu {
   $this: &;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 
   &__row {
-    display: flex;
     align-items: center;
-    padding: $indent-vertical $indent-horizontal;
     cursor: pointer;
+    display: flex;
+    padding: $indent-vertical $indent-horizontal;
 
     &_active,
     &:hover {
@@ -54,8 +57,8 @@ $indent-action: .5rem;
 
     &_danger {
       &:hover {
+        background-color: fade-out($danger, 0.9);
         color: $danger;
-        background-color: fade-out($danger, .9);
 
         #{$this}__icon {
           color: $danger;
@@ -71,8 +74,8 @@ $indent-action: .5rem;
 
   &__text {
     flex: 1;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

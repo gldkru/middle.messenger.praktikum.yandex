@@ -1,4 +1,4 @@
-export const template = `
+const template = `
 <div class="main-area">
   <div class="main-area__scroll">
     <div class="container">
@@ -32,3 +32,5 @@ export const template = `
   </div>
 </div>
 `;
+
+export default template;

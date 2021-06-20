@@ -1,8 +1,10 @@
-export const template = `
+const template = `
 <div class="main-window">
-  {{asideContent}}  
+  {{asideContent}}
   <main class="main-window__main">
     {{content}}
   </main>
 </div>
 `;
+
+export default template;

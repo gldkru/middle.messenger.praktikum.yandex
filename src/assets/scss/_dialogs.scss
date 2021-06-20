@@ -1,17 +1,17 @@
 .dialogs {
-  width: 100%;
+  border-bottom: 1px solid $border-color;
+  flex: 1;
   overflow: hidden;
   overflow-y: auto;
-  flex: 1;
-  border-bottom: 1px solid $border-color;
+  width: 100%;
 }
 
 .dialogs-search {
-  display: block;
-  width: 100%;
-  padding: $indent-vertical $indent-horizontal;
   border-bottom: 1px solid $border-color;
+  display: block;
+  padding: $indent-vertical $indent-horizontal;
   position: relative;
+  width: 100%;
 
   &__input {
     padding-left: 3rem;
@@ -19,30 +19,30 @@
 
   &__icon {
     color: $text-muted;
+    left: 2rem;
     position: absolute;
     top: 50%;
-    left: 2rem;
     transform: translateY(-50%);
   }
 }
 
 .dialog {
   $this: &;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  height: calc(47px + #{$indent-horizontal * 2});
+  padding: $indent-vertical 0;
 
   width: 100%;
-  height: calc(47px + #{$indent-horizontal * 2});
-  display: flex;
-  align-items: center;
-  padding: $indent-vertical 0;
-  flex-flow: row nowrap;
-  cursor: pointer;
 
   &_list {
-    padding: $indent-horizontal;
     background-color: $bg-dialogs;
+    border-bottom: 1px solid $border-color;
+    padding: $indent-horizontal;
     transition: $transition-background;
     will-change: background-color;
-    border-bottom: 1px solid $border-color;
 
     &#{$this}_active,
     &:hover {
@@ -52,84 +52,84 @@
 
 
   &__information {
-    position: relative;
-    width: calc(100% - (47px + #{$indent-horizontal}));
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-flow: column nowrap;
     justify-content: center;
+    position: relative;
+    width: calc(100% - (47px + #{$indent-horizontal}));
   }
 
   &__name {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__preview {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
     flex: 1;
-    margin-top: .4rem;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+    width: 100%;
   }
 
   &__avatar {
-    width: 47px;
-    height: 47px;
-    overflow: hidden;
+    align-items: center;
     background-color: $bg-secondary;
     border-radius: 50%;
-    margin-right: $indent-horizontal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
     color: $text-muted;
-    letter-spacing: .05rem;
+    display: flex;
     flex: 0 0 47px;
+    font-weight: 600;
+    height: 47px;
+    justify-content: center;
+    letter-spacing: 0.05rem;
+    margin-right: $indent-horizontal;
+    overflow: hidden;
+    width: 47px;
   }
 
   &__avatar-image {
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
+    height: 100%;
+    width: 100%;
   }
 
   &__author {
-    font-weight: 600;
     font-size: 1rem;
-    white-space: nowrap;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__short-message {
-    font-size: .8rem;
-    padding-right: .5rem;
-    flex: 1;
-    line-height: 1.1rem;
     color: $text-muted;
+    flex: 1;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    padding-right: 0.5rem;
   }
 
   &__time {
-    font-size: .75rem;
     color: $text-muted;
+    font-size: 0.75rem;
   }
 
   &__counter {
-    display: inline-flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    font-size: .75rem;
-    border-radius: 50%;
-    background-color: $primary;
-    color: $text-light;
     align-items: center;
-    justify-content: center;
     align-self: flex-end;
+    background-color: $primary;
+    border-radius: 50%;
+    color: $text-light;
+    display: inline-flex;
+    font-size: 0.75rem;
+    height: 1.5rem;
+    justify-content: center;
+    line-height: 1.5rem;
     user-select: none;
+    width: 1.5rem;
   }
 
   &__sender {
