@@ -1,0 +1,23 @@
+{
+	"name": "yndx-teach",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "node server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gldkru/mf.messenger.praktikum.yandex.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gldkru/mf.messenger.praktikum.yandex/issues"
+	},
+	"homepage": "https://github.com/gldkru/mf.messenger.praktikum.yandex#readme",
+	"devDependencies": {
+		"express": "^4.17.1"
+	}
+}
