@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "npm run build && npm run server",
-    "dev": "./node_modules/.bin/parcel serve ./static/*.html ./static/**/*",
-    "build": "./node_modules/.bin/parcel build ./static/*.html ./static/**/*",
+    "dev": "parcel serve ./static/*.html ./static/**/*",
+    "build": "parcel build ./static/*.html ./static/**/*",
     "server": "node server.js",
     "lint": "npx eslint . --ext .ts --fix && npx stylelint ./src/assets/scss/*.scss --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
