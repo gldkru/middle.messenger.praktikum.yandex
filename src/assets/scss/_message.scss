@@ -1,0 +1,97 @@
+@use 'sass:math';
+
+.message-form {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+
+  &__inner {
+    padding: 0 math.div($indent-horizontal, 2);
+
+    &_wide {
+      flex: 1;
+    }
+  }
+}
+
+.message {
+  $this: &;
+  margin-bottom: 1rem;
+
+  width: 100%;
+
+  &__inner {
+    display: inline-block;
+    max-width: 60%;
+    overflow: hidden;
+    padding: $indent-horizontal;
+    position: relative;
+    text-align: left;
+  }
+
+  &__meta {
+    color: $text-muted;
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+    text-align: right;
+    user-select: none;
+  }
+
+  &__status {
+    display: inline-block;
+  }
+
+  &__time {
+    display: inline-block;
+  }
+
+  &_system {
+    color: $text-muted;
+    margin: $indent-vertical * 2 0;
+    text-align: center;
+  }
+
+  &_get {
+    #{$this}__inner,
+    #{$this}__image {
+      background-color: lighten($secondary, 3%);
+      border-radius: 0 $border-radius * 2 $border-radius * 2 $border-radius * 2;
+    }
+  }
+
+  &_send {
+    text-align: right;
+
+    #{$this}__meta {
+      color: $primary;
+    }
+
+    #{$this}__inner,
+    #{$this}__image {
+      background-color: $bg-active;
+      border-radius: $border-radius * 2 0 $border-radius * 2 $border-radius * 2;
+    }
+  }
+
+  &_type-image {
+    #{$this}__inner {
+      border: 1px solid $border-color;
+      padding: 0;
+    }
+
+    #{$this}__meta {
+      background: fade-out(darken($black, 7%), 0.4);
+      border-radius: 30px;
+      bottom: $indent-vertical;
+      color: $text-light;
+      padding: 0.25rem 0.75rem;
+      position: absolute;
+      right: $indent-horizontal;
+      z-index: 10;
+    }
+
+    #{$this}__image {
+      max-width: 400px;
+    }
+  }
+}

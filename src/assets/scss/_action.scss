@@ -1,0 +1,81 @@
+$indent-action: 0.5rem;
+
+.action {
+  position: relative;
+
+  &__window {
+    background-color: $bg-main;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    padding: $indent-vertical $indent-horizontal;
+    position: absolute;
+    width: 12rem;
+  }
+
+  .action-menu {
+    margin: 0 - $indent-vertical 0 - $indent-horizontal;
+  }
+
+  &_top {
+    bottom: 0;
+    // todo: вычислять позицию через JS и position fixed
+    margin-bottom: $indent-action;
+  }
+
+  &_bottom {
+    // todo: вычислять позицию через JS и position fixed
+    margin-top: $input-height - $indent-action;
+    top: 0;
+  }
+
+  &_left {
+    right: 0;
+  }
+
+  &_right {
+    left: 0;
+  }
+}
+
+.action-menu {
+  $this: &;
+
+  font-size: 0.9rem;
+
+  &__row {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: $indent-vertical $indent-horizontal;
+
+    &_active,
+    &:hover {
+      background-color: $bg-active;
+      color: $primary;
+    }
+
+    &_danger {
+      &:hover {
+        background-color: fade-out($danger, 0.9);
+        color: $danger;
+
+        #{$this}__icon {
+          color: $danger;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    color: $primary;
+    margin-right: $indent-horizontal;
+  }
+
+  &__text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
