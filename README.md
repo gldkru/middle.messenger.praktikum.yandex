@@ -1,5 +1,3 @@
-## [PR (Sprint 2)](https://github.com/gldkru/mf.messenger.praktikum.yandex/pull/6)
-
 ## [Netlify](https://gracious-perlman-3492c3.netlify.app/)
 
 - [Авторизация](https://gracious-perlman-3492c3.netlify.app/)
@@ -12,3 +10,7 @@
 - [Редактирование профиля пользователя](https://gracious-perlman-3492c3.netlify.app/profile-edit.html)
 - [404](https://gracious-perlman-3492c3.netlify.app/404.html)
 - [50\*](https://gracious-perlman-3492c3.netlify.app/500.html)
+
+## Next
+
+[PR (Sprint 2)](https://github.com/gldkru/middle.messenger.praktikum.yandex/pull/1)
