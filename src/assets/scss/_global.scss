@@ -1,0 +1,180 @@
+@use 'sass:math';
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body,
+html {
+  background: $bg-main;
+  color: $text-main;
+  font-family: $font-family;
+  font-size: 14px;
+  height: 100%;
+  line-height: 1.4;
+}
+
+button,
+input,
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-radius: $border-radius;
+  font-family: $font-family;
+  font-size: 0.9rem;
+  height: $input-height;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 0.9rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  margin: 0;
+}
+
+form {
+  margin: 0;
+}
+
+textarea {
+  height: auto;
+  min-height: $input-height;
+  resize: none;
+}
+
+.input-gray {
+  background-color: $secondary;
+  border-radius: math.div($input-height, 2);
+  height: $input-height;
+  padding: 0.8rem math.div($input-height, 1.5);
+  width: 100%;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.btn {
+  $this: &;
+  background-color: $primary;
+  border-radius: math.div($input-height, 2);
+  color: $text-light;
+  cursor: pointer;
+
+  display: inline-block;
+  height: $input-height;
+  min-width: $input-height;
+  text-align: center;
+  user-select: none;
+
+  &_active,
+  &:hover {
+    background-color: lighten($primary, 7%);
+  }
+
+  &_icon {
+    background-color: transparent;
+    color: $text-muted;
+
+    &#{$this}_active,
+    &:hover {
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+
+  &_padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &_block {
+    border-radius: $border-radius;
+    display: block;
+    margin: 0 auto;
+    max-width: 24rem;
+    width: 100%;
+  }
+
+  &_lg {
+    font-size: 1rem;
+    height: $input-height * 1.2;
+  }
+
+  &_link {
+    background-color: transparent;
+    color: $primary;
+    height: auto;
+
+    &:hover {
+      background-color: transparent;
+      color: lighten($primary, 7%);
+    }
+  }
+
+  &_danger {
+    background-color: $danger;
+    color: $text-light;
+
+    &:hover {
+      background-color: lighten($danger, 7%);
+      color: $text-light;
+    }
+  }
+
+  &_secondary {
+    background-color: $gray;
+    color: $black;
+
+    &:hover {
+      background-color: lighten($gray, 2%);
+      color: $black;
+    }
+  }
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+.text-danger {
+  color: $danger;
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}

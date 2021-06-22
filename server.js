@@ -1,11 +1,12 @@
-const express = require('express')
-const path = require('path')
+const express = require("express");
+const path = require("path");
 
-const app = express()
-const PORT = 4000
+const app = express();
+const PORT = 3000;
 
-app.use(express.static(path.join(__dirname, 'static')))
+app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "static")));
 
-app.listen(PORT, function() {
-	console.log(`App listening on port ${PORT}!`)
-})
+app.listen(PORT, function () {
+	console.log(`App listening on port ${PORT}!`);
+});

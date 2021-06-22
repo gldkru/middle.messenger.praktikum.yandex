@@ -1,0 +1,35 @@
+.modal {
+  align-items: center;
+  background-color: fade-out($black, 0.7);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  &__window {
+    background-color: $bg-main;
+    border-radius: $border-radius * 2;
+    box-shadow: $box-shadow;
+    font-size: 1.5rem;
+    max-width: 400px;
+    padding: $indent-vertical * 3 $indent-horizontal * 4;
+    text-align: center;
+    width: 96%;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: $indent-vertical * 3;
+
+    .btn {
+      &:not(:last-child) {
+        margin-right: $indent-horizontal;
+      }
+    }
+  }
+}
